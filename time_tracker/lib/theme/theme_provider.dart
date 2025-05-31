@@ -1,5 +1,5 @@
 import 'package:time_tracker/export.dart';
 
-class ExpenseProvider with ChangeNotifier{
+class ThemeProvider with ChangeNotifier {
   
 }
