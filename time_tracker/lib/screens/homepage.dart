@@ -14,13 +14,17 @@ class _HomepageState extends State<Homepage> {
     Future.microtask(() {
       Provider.of<TasksProvider>(context, listen: false).getSavedTasks();
       Provider.of<ProjectsProvider>(context, listen: false).getSavedProjects();
+      Provider.of<TimeEntriesProvider>(
+        context,
+        listen: false,
+      ).loadTimeEntries();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 2,
       child: Scaffold(
         drawer: Drawers(),

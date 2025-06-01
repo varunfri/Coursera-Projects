@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:time_tracker/export.dart';
-import 'package:time_tracker/screens/drawer/pages/tasks.dart';
+
 
 class Drawers extends StatelessWidget {
   const Drawers({super.key});
@@ -10,7 +9,19 @@ class Drawers extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          DrawerHeader(child: Center(child: Text("Time Tracker"))),
+          DrawerHeader(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 65,
+                    backgroundImage: AssetImage("asset/logo/logo.png"),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsetsGeometry.all(10),
             child: Column(
@@ -41,6 +52,19 @@ class Drawers extends StatelessWidget {
                   },
                   leading: Icon(Icons.note_add_outlined),
                   title: Text("Tasks"),
+                  trailing: Icon(Icons.keyboard_arrow_right_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Settings(title: "Tasks")),
+                    );
+                    debugPrint("Settings");
+                  },
+                  leading: Icon(Icons.settings_outlined),
+                  title: Text("Settings"),
                   trailing: Icon(Icons.keyboard_arrow_right_outlined),
                 ),
               ],

@@ -18,7 +18,7 @@ class AllEntries extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => TimeEntry(title: "Add New Time Entry"),
+                      builder: (_) => TimeEntry(title: "Add Project Timings"),
                     ),
                   );
                 },
@@ -44,22 +44,33 @@ class AllEntries extends StatelessWidget {
                         ],
                       ),
                     )
-                  : SingleChildScrollView(
-                      padding: EdgeInsets.all(20),
-                      child: ListView.builder(
-                        itemCount: entriesProvider.entryList.length,
-                        itemBuilder: (context, index) {
-                          final data = entriesProvider.timeEntries[index];
-                          return Card(
-                            child: ListTile(
-                              title: Text(
-                                data.projectName ?? "No project found",
-                              ),
-                              subtitle: Text(data.taskName ?? "No task found"),
+                  : ListView.builder(
+                      itemCount: entriesProvider.entryList.length,
+                      itemBuilder: (context, index) {
+                        final data = entriesProvider.timeEntries[index];
+                        return Card(
+                          child: ListTile(
+                            title: Text(data.projectName ?? "No project found"),
+                            subtitle: Text(data.taskName ?? "No task found"),
+                            trailing: IconButton(
+                              onPressed: () {
+                                AddAlert(
+                                  isAlert: true,
+                                  actionTitle2: "Delete",
+                                  context: context,
+                                  alertTitle: "Sure Deleting?",
+                                  isAlertFunction: () {
+                                    entriesProvider.delEntry(index: index);
+                                    Navigator.pop(context);
+                                  },
+                                  saveFunction: null,
+                                ).addAlert();
+                              },
+                              icon: Icon(Icons.delete_outline_outlined),
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
             );
           },

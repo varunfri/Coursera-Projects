@@ -2,7 +2,7 @@ class TimeEntries {
   final String? projectName;
   final String? taskName;
   final String? date;
-  final int? hour;
+  final String? hour;
   final String? note;
 
   TimeEntries({

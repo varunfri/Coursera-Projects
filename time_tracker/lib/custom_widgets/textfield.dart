@@ -14,6 +14,9 @@ class Textfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
       decoration: InputDecoration(
         hintText: hintText,
         fillColor: Colors.transparent,
