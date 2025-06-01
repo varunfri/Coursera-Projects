@@ -237,7 +237,6 @@ class _DropList extends StatefulWidget {
   final String hintText;
   final Function(String?) onSelected;
   const _DropList({
-    super.key,
     required this.hintText,
     required this.options,
     required this.onSelected,
@@ -267,48 +266,9 @@ class _DropListState extends State<_DropList> {
   }
 }
 
-class _DatePicker extends StatelessWidget {
-  final DateTime firstDate;
-  final DateTime lastDate;
-  final Function(DatePickerEntryMode) onDatePickerModeChange;
-
-  _DatePicker({
-    required this.onDatePickerModeChange,
-    required this.firstDate,
-    required this.lastDate,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-      height: 50,
-      width: double.infinity,
-      child: GestureDetector(
-        onTap: () {
-          showDialog(
-            context: context,
-            builder: (_) {
-              return DatePickerDialog(
-                firstDate: firstDate,
-                lastDate: lastDate,
-                onDatePickerModeChange: onDatePickerModeChange,
-              );
-            },
-          );
-        },
-        child: TextField(
-          decoration: InputDecoration(hintText: "Select Date"),
-          controller: TextEditingController(),
-          enabled: false,
-        ),
-      ),
-    );
-  }
-}
-
 class _CardStyle extends StatelessWidget {
   final List<Widget> children;
-  const _CardStyle({super.key, required this.children});
+  const _CardStyle({required this.children});
 
   @override
   Widget build(BuildContext context) {

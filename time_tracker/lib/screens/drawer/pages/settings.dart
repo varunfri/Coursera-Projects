@@ -30,7 +30,6 @@ class _SettingsState extends State<Settings> {
                       Wrap(
                         spacing: 10,
                         children: List<Widget>.generate(3, (int index) {
-                          int? _value = 1;
                           List<String> title = ["System", "Light", "Dark"];
                           return ChoiceChip(
                             label: Text(title[index]),
