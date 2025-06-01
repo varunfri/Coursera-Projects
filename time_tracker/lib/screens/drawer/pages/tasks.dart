@@ -13,7 +13,9 @@ class _TasksState extends State<Tasks> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      Provider.of<TasksProvider>(context, listen: false).getSavedTasks();
+      if (mounted) {
+        Provider.of<TasksProvider>(context, listen: false).getSavedTasks();
+      }
     });
   }
 
@@ -27,7 +29,7 @@ class _TasksState extends State<Tasks> {
             onPressed: () {
               AddAlert(
                 controller: taskController,
-                isAlertFunction: (){},
+                isAlertFunction: () {},
                 // onChangedText: (e) {},
                 hintText: "Enter task name",
                 isAlert: false,
@@ -41,7 +43,7 @@ class _TasksState extends State<Tasks> {
                           taskProvider.addTasks(taskName: taskController.text),
                           await taskProvider.saveTasks(),
                           taskController.clear(),
-                          Navigator.pop(context),
+                          if (context.mounted) {Navigator.pop(context)},
                         }
                       : debugPrint("Enter task name");
                 },
@@ -88,7 +90,7 @@ class _TasksState extends State<Tasks> {
                               onPressed: () {
                                 debugPrint("delete?");
                                 AddAlert(
-                                  saveFunction: (){},
+                                  saveFunction: () {},
                                   isAlert: true,
                                   actionTitle2: "Delete",
                                   context: context,
@@ -97,7 +99,9 @@ class _TasksState extends State<Tasks> {
                                     debugPrint("Sure Delete!?");
                                     taskProvider.delTasks(index: index);
                                     await taskProvider.saveTasks();
-                                    Navigator.pop(context);
+                                    if (context.mounted) {
+                                      Navigator.pop(context);
+                                    }
                                   },
                                 ).addAlert();
                               },

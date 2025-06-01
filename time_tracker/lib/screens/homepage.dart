@@ -12,12 +12,17 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      Provider.of<TasksProvider>(context, listen: false).getSavedTasks();
-      Provider.of<ProjectsProvider>(context, listen: false).getSavedProjects();
-      Provider.of<TimeEntriesProvider>(
-        context,
-        listen: false,
-      ).loadTimeEntries();
+      if (mounted) {
+        Provider.of<TasksProvider>(context, listen: false).getSavedTasks();
+        Provider.of<ProjectsProvider>(
+          context,
+          listen: false,
+        ).getSavedProjects();
+        Provider.of<TimeEntriesProvider>(
+          context,
+          listen: false,
+        ).loadTimeEntries();
+      }
     });
   }
 

@@ -26,7 +26,6 @@ class AddAlert {
     required this.saveFunction,
   });
   void addAlert() {
-    final taskProvider = Provider.of<TasksProvider>(context, listen: false);
     showDialog(
       barrierDismissible: false,
       context: context,

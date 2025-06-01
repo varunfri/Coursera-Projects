@@ -141,7 +141,7 @@ class _ProjectsState extends State<Projects> {
                       projectName: projectController.text,
                     );
                     await projectProvider.saveProjects();
-                    if (mounted) {
+                    if (context.mounted) {
                       // Check if the widget is still mounted
                       Navigator.pop(context);
                     }

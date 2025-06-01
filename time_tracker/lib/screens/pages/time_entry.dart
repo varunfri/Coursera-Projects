@@ -16,7 +16,9 @@ class _TimeEntryState extends State<TimeEntry> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      Provider.of<TimeEntriesProvider>(context, listen: false).clearDate();
+      if (mounted) {
+        Provider.of<TimeEntriesProvider>(context, listen: false).clearDate();
+      }
     });
   }
 
