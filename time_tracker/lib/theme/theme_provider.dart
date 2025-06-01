@@ -9,7 +9,7 @@ class ThemeProvider with ChangeNotifier {
   int _index = 0;
   int get index => _index;
   set setIndex(int? i) {
-    _index = i!;
+    _index = i ?? 0;
     saveTheme();
 
     notifyListeners();
