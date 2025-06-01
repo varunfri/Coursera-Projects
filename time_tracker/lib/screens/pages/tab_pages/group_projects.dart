@@ -24,7 +24,8 @@ class GroupProjects extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => TimeEntry(title: "Add Project Timings",),
+                          builder: (_) =>
+                              TimeEntry(title: "Add Project Timings"),
                         ),
                       );
                     },
@@ -115,14 +116,12 @@ class GroupProjects extends StatelessWidget {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
+                                    Text('Total Time: $hours hr: $minutes min', style: Theme.of(context).textTheme.titleSmall,),
                                   ],
                                 ),
                                 children: entries.map((entry) {
                                   return ListTile(
-                                    title: Text(
-                                      "Task Name: ${entry.taskName}" ??
-                                          'No Task Name',
-                                    ),
+                                    title: Text("Task Name: ${entry.taskName}"),
                                     subtitle: Text(
                                       'Total Time: ${entry.hour ?? "0:00"}',
                                     ),

@@ -50,8 +50,8 @@ class AllEntries extends StatelessWidget {
                         final data = entriesProvider.timeEntries[index];
                         return Card(
                           child: ListTile(
-                            title: Text(data.projectName ?? "No project found"),
-                            subtitle: Text(data.taskName ?? "No task found"),
+                            title: Text("Project: ${data.projectName}"),
+                            subtitle: Text("Task: ${data.taskName}"),
                             trailing: IconButton(
                               onPressed: () {
                                 AddAlert(
