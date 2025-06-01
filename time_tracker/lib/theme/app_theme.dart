@@ -79,17 +79,21 @@ class AppTheme {
       fillColor: Colors.white,
       filled: true,
     ),
+    listTileTheme: ListTileThemeData(
+      textColor: Colors.black,
+      titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+    ),
   );
 
   //use this for dark theme
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: Colors.deepPurple[700], // A darker deep purple for dark mode
+    primaryColor: Colors.white, // A darker deep purple for dark mode
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors
-          .deepPurple, // Can still use the same seed, but brightness matters
+      seedColor:
+          Colors.white, // Can still use the same seed, but brightness matters
       brightness: Brightness.dark,
-      primary: Colors.deepPurple[700],
+      primary: Colors.white,
       onPrimary: Colors.white,
       secondary: Colors.amber[700],
       onSecondary: Colors.black,
@@ -101,6 +105,7 @@ class AppTheme {
     ),
     scaffoldBackgroundColor: Colors.black, // True black for scaffold background
     appBarTheme: AppBarTheme(
+      scrolledUnderElevation: 0,
       backgroundColor: Colors.black,
       foregroundColor: Colors.white,
       titleTextStyle: TextStyle(
@@ -111,24 +116,25 @@ class AppTheme {
       iconTheme: IconThemeData(color: Colors.white),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.deepPurple,
+      buttonColor: Colors.white,
       textTheme: ButtonTextTheme.primary,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurple[700],
+        backgroundColor: Colors.white,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       ),
     ),
     textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(foregroundColor: Colors.deepPurple[400]),
+      style: TextButton.styleFrom(foregroundColor: Colors.white),
     ),
     cardTheme: CardThemeData(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      color: Colors.grey[900],
+      color: Colors.grey[800],
+      shadowColor: Colors.white,
     ),
     textTheme: const TextTheme(
       displayLarge: TextStyle(fontSize: 57, fontWeight: FontWeight.bold),
@@ -146,20 +152,28 @@ class AppTheme {
       labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
       labelMedium: TextStyle(fontSize: 12),
       labelSmall: TextStyle(fontSize: 10),
-    ).apply(bodyColor: Colors.white70, displayColor: Colors.white70),
+    ).apply(bodyColor: Colors.white, displayColor: Colors.white),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: Colors.deepPurple[700]!, width: 1.5),
+        borderSide: BorderSide(color: Colors.white, width: 1.5),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: Colors.deepPurple[400]!, width: 2.0),
+        borderSide: BorderSide(color: Colors.white, width: 2.0),
       ),
-      labelStyle: TextStyle(color: Colors.deepPurple[400]),
+      labelStyle: TextStyle(color: Colors.white),
       hintStyle: TextStyle(color: Colors.grey[400]),
       fillColor: Colors.grey[900],
       filled: true,
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+    ),
+    listTileTheme: ListTileThemeData(
+      textColor: Colors.white,
+      titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
     ),
   );
 }

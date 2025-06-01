@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       providers: Providers.providers,
       child: MaterialApp(
         theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         title: "Time Tracker",
         home: Homepage(),
