@@ -7,6 +7,9 @@ export 'package:intl/date_time_patterns.dart'; //only date_time_formatter
 // Screens
 export "./screens/homepage.dart";
 
+// App theme
+export './theme/app_theme.dart';
+
 //Providers
 export './providers/providers.dart';
 export './theme/theme_provider.dart';

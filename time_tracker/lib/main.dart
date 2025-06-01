@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: Providers.providers,
       child: MaterialApp(
-        theme: ThemeData.light(),
-        darkTheme: ThemeData.dark(),
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         title: "Time Tracker",
         home: Homepage(),

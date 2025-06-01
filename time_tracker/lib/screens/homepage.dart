@@ -11,9 +11,16 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Time Tracker"),
+      drawer: Drawer(
+        
+        
       ),
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        title: Text("Time Tracker"),
+        actions: [],
+      ),
+      body: Center(child: Text("")),
     );
   }
 }
