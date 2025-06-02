@@ -51,7 +51,7 @@ class AllEntries extends StatelessWidget {
                         return Card(
                           child: ListTile(
                             title: Text("Project: ${data.projectName}"),
-                            subtitle: Text("Task: ${data.taskName}"),
+                            subtitle: Text("Task: ${data.taskName}\t Date: ${data.date}"),
                             trailing: IconButton(
                               onPressed: () {
                                 AddAlert(
