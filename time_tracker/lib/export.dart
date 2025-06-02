@@ -36,3 +36,5 @@ export './custom_widgets/textfield.dart';
 
 // time entries data
 export './providers/time_entries/time_entry_data.dart';
+export 'package:time_tracker/screens/pages/time_entry.dart';
+

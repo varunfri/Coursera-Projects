@@ -1,5 +1,5 @@
 import 'package:time_tracker/export.dart';
-import 'package:time_tracker/screens/pages/time_entry.dart';
+import 'package:intl/intl.dart';
 
 class AllEntries extends StatelessWidget {
   const AllEntries({super.key});
@@ -48,10 +48,17 @@ class AllEntries extends StatelessWidget {
                       itemCount: entriesProvider.entryList.length,
                       itemBuilder: (context, index) {
                         final data = entriesProvider.timeEntries[index];
+                        final date = DateFormat("dd-MM-yyyy").format(
+                          DateTime.parse(
+                            data.date ?? DateTime.now().toString(),
+                          ),
+                        );
                         return Card(
                           child: ListTile(
                             title: Text("Project: ${data.projectName}"),
-                            subtitle: Text("Task: ${data.taskName}\t Date: ${data.date}"),
+                            subtitle: Text(
+                              "Task: ${data.taskName}\t Date: $date",
+                            ),
                             trailing: IconButton(
                               onPressed: () {
                                 AddAlert(
