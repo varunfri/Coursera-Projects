@@ -127,7 +127,7 @@ class GroupProjects extends StatelessWidget {
                               return ListTile(
                                 title: Text("Task Name: ${entry.taskName}"),
                                 subtitle: Text(
-                                  'Total Time: ${entry.hour ?? "0:00"}\t Date: $date',
+                                  'Total Time: ${entry.hour ?? "0:00"} hr\t Date: $date',
                                 ),
                               );
                             }).toList(),
